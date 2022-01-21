@@ -1,0 +1,78 @@
+*       { box-sizing: border-box;   }
+.gray   { color: #918E9B;           }
+.bold   { font-weight: bold;        }
+.caps   { 
+    text-transform: uppercase; 
+    line-height: 12px;
+    letter-spacing: 0.17em;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    background: #F55A5A;
+    column-gap: 7px;    
+}
+
+.nav--image {
+    width: 24px;
+    height: 24px;   
+}
+.nav--text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.075em;
+    color: #FFFFFF;
+}
+
+.card {
+    box-shadow: 0 0.1px 0 0 #918E9B;
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 2em auto;
+	height: 170px;
+	width: 470px;
+}
+
+.card-image {
+    position: relative;
+	text-align: left;
+	overflow: hidden;
+	/* padding: 30px; */
+	height: 100%;
+	float: left;
+	width: 125px;
+}
+
+.container {
+	display: inline-block;
+    transition: all 0.3s ease-out;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 70%;
+    text-align: left;
+}
+
+.container h1 {
+    font-size: 25px;
+    line-height: 30px;
+}
+.container p {
+    font-size: 10px;
+    line-height: 150%;   
+}
+
+.container a {
+    text-decoration: underline;
+    color: #918E9B; 
+    padding: 5px;
+}
