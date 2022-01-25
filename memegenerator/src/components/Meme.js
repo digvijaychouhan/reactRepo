@@ -1,4 +1,13 @@
+import memedata from "../memesData"
+
 export default function Meme() {
+    function memeGenerator () {
+        const memesArray = memedata.data.memes; 
+        const randomNumber = Math.floor(Math.random() * (memesArray.length));
+        const getUrl = memesArray[randomNumber].url;
+        console.log(getUrl);
+    }
+
     return (
         <main className="form">
             <input 
@@ -12,7 +21,13 @@ export default function Meme() {
                 className="form--input"
             />
             
-            <button className="form--button">Get a new meme image  🖼</button>
+            <button 
+                className="form--button"
+                onClick={memeGenerator}
+            >
+                Get a new meme image  🖼
+            </button>
+            
         </main>
     )
 }
