@@ -3,12 +3,25 @@ import memedata from "../memesData";
 
 export default function Meme() {
     
-    const [memeImage, setMemeImage] = useState("");
-    
+    // const [memeImage, setMemeImage] = useState("");
+    const [meme, setMeme] = useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg"
+    });
+
+    const [allMemeImages, setAllMemeImages] = useState(memedata);
+
     function memeGenerator () {
-        const memesArray = memedata.data.memes; 
+        const memesArray = allMemeImages.data.memes; 
         const randomNumber = Math.floor(Math.random() * (memesArray.length));
-        setMemeImage(memesArray[randomNumber].url);
+        const url = memesArray[randomNumber].url;
+        setMeme(prevMeme => {
+            return ({
+                ...prevMeme,
+                randomImage: url
+            });
+        } );
     }
 
     return (
@@ -16,12 +29,12 @@ export default function Meme() {
             <div className="form">
                 <input 
                     type="text" 
-                    placeholder="Shut up" 
+                    placeholder="Top text" 
                     className="form--input"
                 />
                 <input 
                     type="text" 
-                    placeholder="and take my money" 
+                    placeholder="Bottom text" 
                     className="form--input"
                 />
                 
@@ -33,7 +46,7 @@ export default function Meme() {
                 </button>
             </div>           
 
-            <img src={memeImage} alt="" className="meme--image" />
+            <img src={meme.randomImage} alt="" className="meme--image" />
         </main>
     )
 }
